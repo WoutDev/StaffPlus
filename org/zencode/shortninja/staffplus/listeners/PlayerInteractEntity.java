@@ -11,7 +11,6 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.zencode.shortninja.staffplus.StaffPlus;
 import org.zencode.shortninja.staffplus.gadgets.CPS;
 import org.zencode.shortninja.staffplus.guis.ExamineGUI;
-import org.zencode.shortninja.staffplus.methods.Mode;
 
 public class PlayerInteractEntity implements Listener
 {
@@ -20,7 +19,7 @@ public class PlayerInteractEntity implements Listener
 	{
 		Player player = event.getPlayer();
 		
-		if(!Mode.active.contains(player.getName()))
+		if(!StaffPlus.get().mode.isActive(player.getName()))
 		{
 			return;
 		}

@@ -8,11 +8,11 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.zencode.shortninja.staffplus.StaffPlus;
-import org.zencode.shortninja.staffplus.commands.Executors;
+import org.zencode.shortninja.staffplus.commands.Executor;
 import org.zencode.shortninja.staffplus.types.Report;
 import org.zencode.shortninja.staffplus.types.User;
 
-public class ReportCmd implements Executors
+public class ReportCmd implements Executor
 {
 	private static Map<String, Long> lastUse = new HashMap<String, Long>();
 	private final long COOLDOWN = StaffPlus.get().storage.reportsCooldown;

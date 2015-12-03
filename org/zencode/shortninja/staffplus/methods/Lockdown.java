@@ -5,7 +5,12 @@ import org.zencode.shortninja.staffplus.StaffPlus;
 
 public class Lockdown
 {
-	public static boolean open = true;
+	private static boolean open = true;
+	
+	public boolean isOpen()
+	{
+		return open;
+	}
 	
 	public void toggle(Player player)
 	{

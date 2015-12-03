@@ -6,7 +6,6 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerDropItemEvent;
 import org.zencode.shortninja.staffplus.StaffPlus;
-import org.zencode.shortninja.staffplus.methods.Mode;
 
 public class PlayerDropItem implements Listener
 {
@@ -15,7 +14,7 @@ public class PlayerDropItem implements Listener
 	{
 		Player player = event.getPlayer();
 		
-		if(!StaffPlus.get().storage.modeInventoryInteractionDisabled || !Mode.active.contains(player.getName()))
+		if(!StaffPlus.get().storage.modeInventoryInteractionDisabled || !StaffPlus.get().mode.isActive(player.getName()))
 		{
 			return;
 		}

@@ -13,8 +13,18 @@ import org.zencode.shortninja.staffplus.gadgets.StaffInventory;
 
 public class Mode
 {
-	public static Set<String> active = new HashSet<String>();
+	private static Set<String> active = new HashSet<String>();
 	private static Map<String, Location> locations = new HashMap<String, Location>();
+	
+	public Set<String> getActive()
+	{
+		return active;
+	}
+	
+	public boolean isActive(String playerName)
+	{
+		return active.contains(playerName);
+	}
 	
 	public void toggle(Player player)
 	{

@@ -11,7 +11,6 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.zencode.shortninja.staffplus.StaffPlus;
 import org.zencode.shortninja.staffplus.guis.WarningGUI;
-import org.zencode.shortninja.staffplus.methods.Mode;
 
 public class InventoryClick implements Listener
 {
@@ -21,7 +20,7 @@ public class InventoryClick implements Listener
 		Player player = (Player) event.getWhoClicked();
 		Inventory inventory = event.getInventory();
 		
-		if(StaffPlus.get().storage.modeInventoryInteractionDisabled && Mode.active.contains(player.getName()))
+		if(StaffPlus.get().storage.modeInventoryInteractionDisabled && StaffPlus.get().mode.isActive(player.getName()))
 		{
 			event.setCancelled(true);
 		}

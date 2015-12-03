@@ -25,7 +25,7 @@ public class BlockBreak implements Listener
 		Player player = event.getPlayer();
 		Block block = event.getBlock();
 		
-		if(StaffPlus.get().storage.modeBlockManipulationDisabled && Mode.active.contains(player.getName()))
+		if(StaffPlus.get().storage.modeBlockManipulationDisabled && StaffPlus.get().mode.isActive(player.getName()))
 		{
 			event.setCancelled(true);
 			return;

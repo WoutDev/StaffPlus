@@ -11,7 +11,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.Inventory;
 import org.zencode.shortninja.staffplus.StaffPlus;
-import org.zencode.shortninja.staffplus.methods.Mode;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.ProtocolLibrary;
@@ -33,7 +32,7 @@ public class PacketListener implements Listener
 				        if(event.getPacketType() == PacketType.Play.Server.BLOCK_ACTION)
 				        {
 					        Player player = event.getPlayer();
-					        if(Mode.active.contains(player.getName()))
+					        if(StaffPlus.get().mode.isActive(player.getName()))
 					        {
 						        event.setCancelled(true);
 					        }
@@ -90,7 +89,7 @@ public class PacketListener implements Listener
 					        {
 						        for(Player p : listener.getWorld().getPlayers())
 						        {
-							        if(Mode.active.contains(p.getName()))
+							        if(StaffPlus.get().mode.isActive(p.getName()))
 							        {
 								        event.setCancelled(true);
 							        }
@@ -106,7 +105,7 @@ public class PacketListener implements Listener
 						        if(entity instanceof Player)
 						        {
 							        Player player = (Player) entity;
-							        if(Mode.active.contains(player.getName()))
+							        if(StaffPlus.get().mode.isActive(player.getName()))
 							        {
 								        event.setCancelled(true);
 							        }

@@ -3,9 +3,9 @@ package org.zencode.shortninja.staffplus.commands.bases;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.zencode.shortninja.staffplus.StaffPlus;
-import org.zencode.shortninja.staffplus.commands.Executors;
+import org.zencode.shortninja.staffplus.commands.Executor;
 
-public class ChatCmd implements Executors
+public class ChatCmd implements Executor
 {
 	public void execute(CommandSender sender, String string, String[] args)
 	{

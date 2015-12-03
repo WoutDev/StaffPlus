@@ -3,10 +3,9 @@ package org.zencode.shortninja.staffplus.commands.bases;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.zencode.shortninja.staffplus.StaffPlus;
-import org.zencode.shortninja.staffplus.commands.Executors;
-import org.zencode.shortninja.staffplus.methods.Alert;
+import org.zencode.shortninja.staffplus.commands.Executor;
 
-public class AlertsCmd implements Executors
+public class AlertsCmd implements Executor
 {
 	public void execute(CommandSender sender, String string, String[] args)
 	{
@@ -58,52 +57,52 @@ public class AlertsCmd implements Executors
 	
 	private void handleName(Player player)
 	{
-		if(Alert.ignoreNameChange.contains(player.getName()))
+		if(StaffPlus.get().alert.isIgnoringNameChange(player.getName()))
 		{
-			Alert.ignoreNameChange.remove(player.getName());
+			StaffPlus.get().alert.removeIgnoringNameChange(player.getName());
 			player.sendMessage(StaffPlus.get().message.generalMessage("&bYou will now &7receive &bname change alerts."));
 		}else
 		{
-			Alert.ignoreNameChange.add(player.getName());
+			StaffPlus.get().alert.addIgnoringNameChange(player.getName());
 			player.sendMessage(StaffPlus.get().message.generalMessage("&bYou will now &7ignore &bname change alerts."));
 		}
 	}
 	
 	private void handleMention(Player player)
 	{
-		if(Alert.ignoreMention.contains(player.getName()))
+		if(StaffPlus.get().alert.isIgnoringMention(player.getName()))
 		{
-			Alert.ignoreMention.remove(player.getName());
+			StaffPlus.get().alert.removeIgnoringMention(player.getName());
 			player.sendMessage(StaffPlus.get().message.generalMessage("&bYou will now &7receive &bmention alerts."));
 		}else
 		{
-			Alert.ignoreMention.add(player.getName());
+			StaffPlus.get().alert.addIgnoringMention(player.getName());
 			player.sendMessage(StaffPlus.get().message.generalMessage("&bYou will now &7ignore &bmention alerts."));
 		}
 	}
 	
 	private void handleXray(Player player)
 	{
-		if(Alert.ignoreXray.contains(player.getName()))
+		if(StaffPlus.get().alert.isIgnoringXray(player.getName()))
 		{
-			Alert.ignoreXray.remove(player.getName());
+			StaffPlus.get().alert.removeIgnoringXray(player.getName());
 			player.sendMessage(StaffPlus.get().message.generalMessage("&bYou will now &7receive &bX-Ray alerts."));
 		}else
 		{
-			Alert.ignoreXray.add(player.getName());
+			StaffPlus.get().alert.removeIgnoringXray(player.getName());
 			player.sendMessage(StaffPlus.get().message.generalMessage("&bYou will now &7ignore &bX-Ray alerts."));
 		}
 	}
 	
 	private void handleReports(Player player)
 	{
-		if(Alert.ignoreReports.contains(player.getName()))
+		if(StaffPlus.get().alert.isIgnoringReports(player.getName()))
 		{
-			Alert.ignoreReports.remove(player.getName());
+			StaffPlus.get().alert.removeIgnoringReports(player.getName());
 			player.sendMessage(StaffPlus.get().message.generalMessage("&bYou will now &7receive &breport alerts."));
 		}else
 		{
-			Alert.ignoreReports.add(player.getName());
+			StaffPlus.get().alert.addIgnoringReports(player.getName());
 			player.sendMessage(StaffPlus.get().message.generalMessage("&bYou will now &7ignore &breport alerts."));
 		}
 	}

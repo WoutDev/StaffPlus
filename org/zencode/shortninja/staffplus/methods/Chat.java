@@ -6,7 +6,12 @@ import org.zencode.shortninja.staffplus.StaffPlus;
 
 public class Chat
 {
-	public static boolean allowedToChat = true;
+	private static boolean allowedToChat = true;
+	
+	public boolean isAllowedToChat()
+	{
+		return allowedToChat;
+	}
 	
 	public void clearChat(Player player)
 	{

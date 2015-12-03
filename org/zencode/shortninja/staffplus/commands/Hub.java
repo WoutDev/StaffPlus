@@ -17,7 +17,7 @@ public class Hub
 {
 	public Hub(CommandSender sender, Command cmd, String string, String[] args)
 	{
-		Executors exe = null;
+		Executor exe = null;
 		
 		if(cmd.getName().equalsIgnoreCase("staff"))
 		{

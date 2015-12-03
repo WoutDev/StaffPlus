@@ -6,7 +6,6 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.zencode.shortninja.staffplus.StaffPlus;
-import org.zencode.shortninja.staffplus.methods.Mode;
 
 public class EntityDamage implements Listener
 {
@@ -23,7 +22,7 @@ public class EntityDamage implements Listener
 				return;
 			}
 			
-			if(StaffPlus.get().storage.modeInvincible && Mode.active.contains(player.getName()))
+			if(StaffPlus.get().storage.modeInvincible && StaffPlus.get().mode.isActive(player.getName()))
 			{
 				event.setCancelled(true);
 				return;

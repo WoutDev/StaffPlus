@@ -9,7 +9,12 @@ import org.zencode.shortninja.staffplus.StaffPlus;
 
 public class Staff
 {
-	public static Set<String> active = new HashSet<String>();
+	private static Set<String> active = new HashSet<String>();
+	
+	public boolean isActive(String playerName)
+	{
+		return active.contains(playerName);
+	}
 	
 	public void toggleChat(Player player)
 	{

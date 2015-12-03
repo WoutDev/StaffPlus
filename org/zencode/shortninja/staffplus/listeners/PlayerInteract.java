@@ -13,7 +13,6 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.zencode.shortninja.staffplus.StaffPlus;
 import org.zencode.shortninja.staffplus.gadgets.StaffInventory;
 import org.zencode.shortninja.staffplus.guis.ReportGUI;
-import org.zencode.shortninja.staffplus.methods.Mode;
 
 public class PlayerInteract implements Listener
 {
@@ -31,7 +30,7 @@ public class PlayerInteract implements Listener
 			return;
 		}
 		
-		if(Mode.active.contains(player.getName()) && isRightClick(click))
+		if(StaffPlus.get().mode.isActive(player.getName()) && isRightClick(click))
 		{
 			ItemStack item = player.getItemInHand();
 			

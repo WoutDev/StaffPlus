@@ -6,7 +6,6 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.zencode.shortninja.staffplus.StaffPlus;
-import org.zencode.shortninja.staffplus.methods.Mode;
 
 public class PlayerDeath implements Listener
 {
@@ -15,7 +14,7 @@ public class PlayerDeath implements Listener
 	{
 		Player player = (Player) event.getEntity();
 		
-		if(!Mode.active.contains(player.getName()))
+		if(!StaffPlus.get().mode.isActive(player.getName()))
 		{
 			return;
 		}

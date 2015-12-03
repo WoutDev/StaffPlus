@@ -8,9 +8,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.zencode.shortninja.staffplus.StaffPlus;
 import org.zencode.shortninja.staffplus.guis.WarningGUI;
-import org.zencode.shortninja.staffplus.methods.Alert;
-import org.zencode.shortninja.staffplus.methods.Chat;
-import org.zencode.shortninja.staffplus.methods.Staff;
 import org.zencode.shortninja.staffplus.types.Warning;
 
 public class AsyncPlayerChat implements Listener
@@ -21,7 +18,7 @@ public class AsyncPlayerChat implements Listener
 		Player player = event.getPlayer();
 		String message = event.getMessage();
 		
-		if(!Chat.allowedToChat && !StaffPlus.get().permission.hasPermission(player, StaffPlus.get().storage.chatPermission))
+		if(!StaffPlus.get().chat.isAllowedToChat() && !StaffPlus.get().permission.hasPermission(player, StaffPlus.get().storage.chatPermission))
 		{
 			player.sendMessage(StaffPlus.get().message.generalMessage("&bChat is currently disabled!"));
 			event.setCancelled(true);
@@ -35,7 +32,7 @@ public class AsyncPlayerChat implements Listener
 			return;
 		}
 		
-		if(Staff.active.contains(player.getName()))
+		if(StaffPlus.get().staff.isActive(player.getName()))
 		{
 			StaffPlus.get().staff.sendChat(player, message);
 			event.setCancelled(true);
@@ -74,7 +71,7 @@ public class AsyncPlayerChat implements Listener
 						continue;
 					}
 					
-					if(!StaffPlus.get().permission.hasPermission(targetPlayer, StaffPlus.get().storage.notifyPermission) || Alert.ignoreMention.contains(targetPlayer.getName()))
+					if(!StaffPlus.get().permission.hasPermission(targetPlayer, StaffPlus.get().storage.notifyPermission) || StaffPlus.get().alert.isIgnoringMention(targetPlayer.getName()))
 					{
 						continue;
 					}

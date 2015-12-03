@@ -4,10 +4,10 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.zencode.shortninja.staffplus.StaffPlus;
-import org.zencode.shortninja.staffplus.commands.Executors;
+import org.zencode.shortninja.staffplus.commands.Executor;
 import org.zencode.shortninja.staffplus.gadgets.CPS;
 
-public class CPSCmd implements Executors
+public class CPSCmd implements Executor
 {
 	public void execute(CommandSender sender, String string, String[] args)
 	{

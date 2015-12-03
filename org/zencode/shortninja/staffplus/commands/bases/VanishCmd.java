@@ -3,11 +3,11 @@ package org.zencode.shortninja.staffplus.commands.bases;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.zencode.shortninja.staffplus.StaffPlus;
-import org.zencode.shortninja.staffplus.commands.Executors;
+import org.zencode.shortninja.staffplus.commands.Executor;
 import org.zencode.shortninja.staffplus.gadgets.StaffInventory;
 import org.zencode.shortninja.staffplus.methods.Mode;
 
-public class VanishCmd implements Executors
+public class VanishCmd implements Executor
 {
 	public void execute(CommandSender sender, String string, String[] args)
 	{
@@ -30,7 +30,7 @@ public class VanishCmd implements Executors
 				
 				if(arg.equalsIgnoreCase("total"))
 				{
-					if(Mode.active.contains(player.getName()))
+					if(StaffPlus.get().mode.isActive(player.getName()))
 					{
 						StaffInventory.toggleVanish(player);
 					}else StaffPlus.get().vanish.totalVanish(player);

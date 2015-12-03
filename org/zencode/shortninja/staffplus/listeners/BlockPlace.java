@@ -6,7 +6,6 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.zencode.shortninja.staffplus.StaffPlus;
-import org.zencode.shortninja.staffplus.methods.Mode;
 
 public class BlockPlace implements Listener
 {
@@ -15,7 +14,7 @@ public class BlockPlace implements Listener
 	{
 		Player player = event.getPlayer();
 		
-		if(!StaffPlus.get().storage.modeBlockManipulationDisabled || !Mode.active.contains(player.getName()))
+		if(!StaffPlus.get().storage.modeBlockManipulationDisabled || !StaffPlus.get().mode.isActive(player.getName()))
 		{
 			return;
 		}

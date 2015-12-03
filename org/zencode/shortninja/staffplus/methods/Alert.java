@@ -10,10 +10,70 @@ import org.zencode.shortninja.staffplus.types.Report;
 
 public class Alert
 {
-	public static Set<String> ignoreNameChange = new HashSet<String>();
-	public static Set<String> ignoreMention = new HashSet<String>();
-	public static Set<String> ignoreXray = new HashSet<String>();
-	public static Set<String> ignoreReports = new HashSet<String>();
+	private static Set<String> ignoreNameChange = new HashSet<String>();
+	private static Set<String> ignoreMention = new HashSet<String>();
+	private static Set<String> ignoreXray = new HashSet<String>();
+	private static Set<String> ignoreReports = new HashSet<String>();
+	
+	public void addIgnoringNameChange(String playerName)
+	{
+		ignoreNameChange.add(playerName);
+	}
+	
+	public void addIgnoringMention(String playerName)
+	{
+		ignoreMention.add(playerName);
+	}
+	
+	public void addIgnoringXray(String playerName)
+	{
+		ignoreXray.add(playerName);
+	}
+	
+	public void addIgnoringReports(String playerName)
+	{
+		ignoreReports.add(playerName);
+	}
+	
+	public void removeIgnoringNameChange(String playerName)
+	{
+		ignoreNameChange.remove(playerName);
+	}
+	
+	public void removeIgnoringMention(String playerName)
+	{
+		ignoreMention.remove(playerName);
+	}
+	
+	public void removeIgnoringXray(String playerName)
+	{
+		ignoreXray.remove(playerName);
+	}
+	
+	public void removeIgnoringReports(String playerName)
+	{
+		ignoreReports.remove(playerName);
+	}
+	
+	public boolean isIgnoringNameChange(String playerName)
+	{
+		return ignoreNameChange.contains(playerName);
+	}
+	
+	public boolean isIgnoringMention(String playerName)
+	{
+		return ignoreMention.contains(playerName);
+	}
+	
+	public boolean isIgnoringXray(String playerName)
+	{
+		return ignoreXray.contains(playerName);
+	}
+	
+	public boolean isIgnoringReports(String playerName)
+	{
+		return ignoreReports.contains(playerName);
+	}
 	
 	public void notifyNameChange(String oldName, String newName)
 	{
