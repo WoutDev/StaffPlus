@@ -1,7 +1,6 @@
 package org.zencode.shortninja.staffplus;
 
 import org.bukkit.Bukkit;
-import org.bukkit.Server;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
@@ -27,11 +26,11 @@ import org.zencode.shortninja.staffplus.listeners.EntityDamageByEntity;
 import org.zencode.shortninja.staffplus.listeners.InventoryClick;
 import org.zencode.shortninja.staffplus.listeners.PlayerCommandPreprocess;
 import org.zencode.shortninja.staffplus.listeners.PlayerDeath;
-import org.zencode.shortninja.staffplus.listeners.PlayerDropItem;
 import org.zencode.shortninja.staffplus.listeners.PlayerInteract;
 import org.zencode.shortninja.staffplus.listeners.PlayerInteractEntity;
 import org.zencode.shortninja.staffplus.listeners.PlayerJoin;
 import org.zencode.shortninja.staffplus.listeners.PlayerMove;
+import org.zencode.shortninja.staffplus.listeners.PlayerPickupItem;
 import org.zencode.shortninja.staffplus.listeners.PlayerQuit;
 import org.zencode.shortninja.staffplus.methods.Alert;
 import org.zencode.shortninja.staffplus.methods.Chat;
@@ -133,7 +132,7 @@ public class StaffPlus extends JavaPlugin
 	{
 		management.closeServer();
 		
-		for(String offlinePlayer : Mode.active)
+		for(String offlinePlayer : mode.getActive())
 		{
 			Player onlinePlayer = Bukkit.getPlayer(offlinePlayer);
 			
@@ -164,11 +163,11 @@ public class StaffPlus extends JavaPlugin
         pluginManager.registerEvents(new InventoryClick(), this);
         pluginManager.registerEvents(new PlayerCommandPreprocess(), this);
         pluginManager.registerEvents(new PlayerDeath(), this);
-        pluginManager.registerEvents(new PlayerDropItem(), this);
         pluginManager.registerEvents(new PlayerInteract(), this);
         pluginManager.registerEvents(new PlayerInteractEntity(), this);
         pluginManager.registerEvents(new PlayerJoin(), this);
         pluginManager.registerEvents(new PlayerMove(), this);
+        pluginManager.registerEvents(new PlayerPickupItem(), this);
         pluginManager.registerEvents(new PlayerQuit(), this);
         pluginManager.registerEvents(new PacketListener(), this);
 	}
