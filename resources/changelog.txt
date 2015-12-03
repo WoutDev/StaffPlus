@@ -1,0 +1,27 @@
+7/10/15: Release.
+7/11/15: Added UUID support, more configuration options.
+7/12/15: Caveat with player teleportation fixed.
+7/14/15: Fixed warnings and reports count issues.
+7/16/15: Added silent chest opening.
+7/20/15: Saving old inventories, follow tool, name updates, toggle staff chat, and
+saving location before staff toggle added.
+7/27/15: Enable staff on login option added.
+8/4/15: Added /v command and option to change the warnings ban command.
+8/5/15: Added /chat clear and /chat toggle commands.
+8/6/15: Changed /v to be able to either hide from staff list or completely and
+added /staff list feature.
+8/9/15: Fixed issue with plugin not disabling without ProtocolLib.
+8/12/15: Added a separate permission for staff chat.
+8/13/15: Added option to block certain commands while in staff mode and
+permissions for staff mode, chat clear, and chat toggle.
+8/19/15: Now compiling with Java 6 for better support.
+9/25/15: HUGE REVAMP! So many additions that it will take way too long to write. :c
+9/26/15: Efficiency improvements, small caveats fixed.
+10/16/15: Fixed a few small caveats.
+11/2/15: Fixed a bug that did not disable staff mode when the server stops.
+12/1/15: Fixed a few small bugs, added player placeholder for custom module, and added
+an option to disable item pickup while in staff mode.
+12/2/15: Fixed a few small bugs and prevented item pickup when 'disable-inventory-interaction'
+is true.
+
+4,866 lines of code and counting!
