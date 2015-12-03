@@ -97,8 +97,7 @@ public class StaffPlus extends JavaPlugin
 	@Override
 	public void onDisable() 
 	{
-		Server server = getServer();
-		ConsoleCommandSender console = server.getConsoleSender();
+		ConsoleCommandSender console = getServer().getConsoleSender();
 		console.sendMessage(message.colorize("&4[Staff+] &cStaff+ has been disabled!"));
 		
 		stop();
