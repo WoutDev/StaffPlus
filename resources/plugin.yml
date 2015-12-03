@@ -1,0 +1,26 @@
+name: StaffPlus
+main: org.zencode.shortninja.staffplus.StaffPlus
+softdepend: [ProtocolLib]
+author: Shortninja - 7/12/2015
+version: 2.0
+commands:
+   staff:
+    description: Puts the player in staff mode.
+   freeze:
+    description: Freezes the player.
+   examine:
+    description: Examines the player.
+   cps:
+    description: Runs cps test on the player.
+   sc:
+    description: Toggles staff chat.
+   report:
+    description: Shows report commands.
+   warn:
+    description: Shows warning commands.
+   v:
+    description: Shows vanish commands.
+   chat:
+    description: Shows chat commands.
+   alerts:
+    description: Shows alerts commands.

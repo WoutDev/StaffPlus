@@ -1,0 +1,309 @@
+# Made with love by Shortninja - ♥
+
+############################################################
+# +------------------------------------------------------+ #
+# |                       General                        | #
+# +------------------------------------------------------+ #
+############################################################
+
+# The key I sent you when you purchased this plugin goes here. Do NOT change it once you have validated!
+plugin-key: ''
+
+# The prefix for general messages.
+general-prefix: '&dStaff+ &8>'
+
+############################################################
+# +------------------------------------------------------+ #
+# |                     Permissions                      | #
+# +------------------------------------------------------+ #
+############################################################
+
+# Permission for clearing/toggling chat.
+chat: 'staff.chat'
+
+# Permission for toggling staff mode.
+mode: 'staff.mode'
+
+# Permission for clearing/getting player reports.
+report: 'staff.report'
+
+# Permission for using '/warn'.
+warn: 'staff.warn'
+
+# Permission for using '/v'.
+vanish: 'staff.vanish'
+
+# Permission for using '/sc'.
+sc: 'staff.sc'
+
+# Permission for blocking listed commands for the player at 'blocked-commands'.
+block: 'staff.block'
+
+# Permission for receiving certain notifications.
+notify: 'staff.notify'
+
+# Permission for locking/unlocking the server.
+lockdown: 'staff.lockdown'
+
+# Use this to give a player all permissions.
+wild-card: 'staff.*'
+
+############################################################
+# +------------------------------------------------------+ #
+# |                       Reports                        | #
+# +------------------------------------------------------+ #
+############################################################
+
+# No permission for regular users, requires 'report' permission for moderator commands.
+reports-module:
+  # Whether or not the plugin will use '/report' features.
+  enabled: true
+  
+  # The prefix for all messages this module sends.
+  prefix: '&dReports &8>'
+  
+  # The sound that is played to staff when someone is reported. Set to 'NONE' to disable.
+  sound: ORB_PICKUP
+  
+  # The cooldown, in seconds, that a player is allowed to use '/report'.
+  cooldown: 10
+
+############################################################
+# +------------------------------------------------------+ #
+# |                       Warnings                       | #
+# +------------------------------------------------------+ #
+############################################################
+
+# Requires 'warn' permission.
+warnings-module:
+  # Whether or not the plugin will use '/warn' features.
+  enabled: true
+  
+  # The prefix for all messages this module sends.
+  prefix: '&dWarnings &8>'
+  
+  # The sound that is played to the player when warned. Set to 'NONE' to disable.
+  sound: ORB_PICKUP
+  
+  # The amount of warnings required before 'ban-command' is executed.
+  # Set to 0 if you want to disable this.
+  maximum: 3
+  
+  # The command executed when a player reaches the 'maximum'.
+  ban-command: 'ban %player% &4Met three warnings. Appeal @ &7www.420blazeit.com&4.'
+
+############################################################
+# +------------------------------------------------------+ #
+# |                    Staff Chat                        | #
+# +------------------------------------------------------+ #
+############################################################
+
+# Requires 'sc' permission.
+staff-chat-module:
+  # Whether or not the plugin will use '/sc' features.
+  enabled: true
+
+  # The prefix for all messages this module sends.
+  prefix: '&dStaffChat &8>'
+
+############################################################
+# +------------------------------------------------------+ #
+# |                      Vanish                          | #
+# +------------------------------------------------------+ #
+############################################################
+
+# Requires 'vanish' permission.
+vanish-module:
+  # Whether or not the plugin will use '/v' features.
+  enabled: true
+
+############################################################
+# +------------------------------------------------------+ #
+# |                       Chat                           | #
+# +------------------------------------------------------+ #
+############################################################
+
+# Requires 'chat' permission.
+chat-module:
+  # Whether or not the plugin will use '/chat' features.
+  enabled: true
+
+############################################################
+# +------------------------------------------------------+ #
+# |                     Staff Mode                       | #
+# +------------------------------------------------------+ #
+############################################################
+
+# Requires 'mode' permission.
+staff-mode:
+  # Whether or not a player is allowed to break/place blocks while in staff mode.
+  disable-block-manipulation: true
+
+  # Whether or not a player is allowed to interact with inventory while in staff mode.
+  disable-inventory-interaction: true
+  
+  # Whether or not a player is invisible while in staff mode.
+  invisible: true
+  
+  # Whether or not a player is invincible while in staff mode.
+  invincible: true
+  
+  # Whether or not a player can fly while in staff mode.
+  flight: true
+  
+  # Returns the staff to the location they were in before they toggled staff mode.
+  original-location: false
+  
+  # Whether or not staff mode will be enabled for staff when staff login.
+  enable-on-login: false
+  
+  # When clicked, this launches the staff towards the direction they are facing.
+  compass-module:
+    # Whether or not this feature is enabled.
+    enabled: true
+
+    # The slot that this module's item is at by default.
+    slot: 1
+    
+    # The speed that the compass will launch the player at.
+    speed: 5
+    
+  # When clicked, this teleports the staff to a random player.
+  teleport-module:
+    # Whether or not this feature is enabled.
+    enabled: true
+    
+    # The slot that this module's item is at by default.
+    slot: 2
+    
+  # When clicked, this will toggle the staff's invisibility.
+  vanish-module:
+    # Whether or not this feature is enabled.
+    enabled: true
+
+    # The slot that this module's item is at by default.
+    slot: 3
+    
+  # When clicked, this will open unresolved reports in a GUI.
+  reports-module:
+    # Whether or not this feature is enabled.
+    enabled: true
+
+    # The slot that this module's item is at by default.
+    slot: 4
+
+  # When clicked, this will freeze the player that the staff is looking at.
+  freeze-module:
+    # Whether or not this feature is enabled.
+    enabled: true
+    
+    # The slot that this module's item is at by default.
+    slot: 6
+    
+    # The message displayed to the player when they are frozen.
+    message: '&4&lYou have been frozen by staff, Do NOT log out!'
+    
+    # Whether or not a player can chat while frozen.
+    prevent-chat: true
+    
+    # Whether or not a player is invincible while frozen.
+    invincible: true
+
+  # When clicked, this will tell the CPS of the player to the staff.
+  cps-module:
+    # Whether or not this feature is enabled.
+    enabled: true
+ 
+    # The slot that this module's item is at by default.
+    slot: 7
+
+    # Amount of time, in seconds, to run test.
+    time: 10
+
+  # When clicked, this will open the inventory of the player that the staff is looking at.
+  inventory-module:
+    # Whether or not this feature is enabled.
+    enabled: true
+
+    # The slot that this module's item is at by default.
+    slot: 8
+    
+    # Whether or not options, like freezing the player, will be shown.
+    options: true
+    
+    # Whether or not extra information, like IP address, will be shown.
+    extra-info: true
+    
+  # When clicked, this will mount the player that the staff is looking at.
+  follow-module:
+    # Whether or not this feature is enabled.
+    enabled: true
+    
+    # The slot that this module's item is at by default.
+    slot: 9
+    
+  # When clicked, this will execute the set command.
+  custom-module:
+    # Whether or not this feature is enabled.
+    enabled: false
+
+    # The slot that this module's item is at by default.
+    slot: 5
+    
+    # The type of item for this module.
+    item: DIAMOND
+    
+    # The name of this module's item.
+    name: '&4Ban all l33t kids'
+    
+    # The lore of this module's item.
+    lore: '&4line1, &6line2, &3line3'
+    
+    # The command that this item will execute.
+    command: 'ban Shortninja &4For snorting too much marijuanas and coding 2hard!!11!1!one!'
+    
+############################################################
+# +------------------------------------------------------+ #
+# |                       Alerts                         | #
+# +------------------------------------------------------+ #
+############################################################
+
+# Requires 'notify' permission.
+alert-options:
+  # Whether or not staff will be notified when a user changes their name.
+  name-notify: true
+  
+  # Whether or not staff will be notified when they are mentioned.
+  mention-notify: true
+  
+  # The sound that is played to staff when notified.
+  sound: ORB_PICKUP
+  
+  # Notifies staff when a player mines blocks listed in 'blocks'.
+  xray-alerts:
+    # Whether or not this module is enabled.
+    enabled: true
+    
+    # Blocks that, when mined, invoke an alert.
+    blocks: MOB_SPAWNER, DIAMOND_ORE
+
+############################################################
+# +------------------------------------------------------+ #
+# |                    Miscellaneous                     | #
+# +------------------------------------------------------+ #
+############################################################
+
+# Miscellaneous options for staff.
+staff-options:
+  # Players that will be displayed when '/staff list' is executed.
+  staff: example1, example2, example3
+  
+  # Commands that staff will not be allowed to use at all.
+  # Must have 'block' permission to take effect.
+  blocked-commands: /example1, example2, example3
+  
+  # Message that is sent when server is in lockdown mode.
+  # Requires 'lockdown' permission to execute command.
+  lockdown-message: '&bServer currently locked! Updates @ &7www.theworstdrug.com&b.'
+
+# You're done with configuration! :c
