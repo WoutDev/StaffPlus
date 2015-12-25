@@ -61,7 +61,6 @@ public class WarningGUI
 		player.sendMessage(" ");
 		player.sendMessage(StaffPlus.get().message.warningsMessage("&bType a reason in chat."));
 		player.sendMessage(" ");
-		
 		waitingForReason.put(player.getName(), this);
 	}
 }

@@ -55,7 +55,7 @@ public class AsyncPlayerChat implements Listener
 		
 		new Warning(warning.getUuid(), warning.getName(), reason, true);
 		player.sendMessage(StaffPlus.get().message.reportsMessage("&bWarned &7" + warning.getName() + "&b for &7" + reason + "&b."));
-		StaffPlus.get().warningGUI.getWaitingForReason(player.getName());
+		StaffPlus.get().warningGUI.removeWaitingForReason(player.getName());
 	}
 	
 	private void checkForMentions(Player player, String[] words)

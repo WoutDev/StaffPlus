@@ -23,9 +23,9 @@ public class ExamineGUI
 	
 	private Inventory extraInventory(Inventory inventory)
 	{
-		ItemStack glass = new ItemStack(Material.STAINED_GLASS, 1, (short) 14);
-		ItemStack leftSkull = new ItemStack(Material.STAINED_GLASS);
-		ItemStack rightSkull = new ItemStack(Material.STAINED_GLASS, 1);
+		ItemStack glass = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 14);
+		ItemStack leftSkull = new ItemStack(Material.STAINED_GLASS_PANE);
+		ItemStack rightSkull = new ItemStack(Material.STAINED_GLASS_PANE, 1);
 		
 		inventory.setItem(45, leftSkull);
 		
