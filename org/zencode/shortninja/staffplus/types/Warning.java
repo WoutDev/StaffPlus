@@ -56,7 +56,7 @@ public class Warning
 		
 		if(shouldBan())
 		{
-			Bukkit.dispatchCommand(Bukkit.getConsoleSender(), StaffPlus.get().storage.warningsBanCommand);
+			Bukkit.dispatchCommand(Bukkit.getConsoleSender(), StaffPlus.get().storage.warningsBanCommand.replace("%player%", name));
 		}
 	}
 	
