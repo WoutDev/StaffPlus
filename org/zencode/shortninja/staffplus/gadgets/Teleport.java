@@ -15,44 +15,26 @@ public class Teleport
 		if(players > 1)
 		{
             Random random = new Random();
-			int dice = random.nextInt(Bukkit.getOnlinePlayers().size());
-			Player randomPlayer = getRandomPlayer(player, dice);
-			
-			if(randomPlayer != null)
+			int current = random.nextInt(Bukkit.getOnlinePlayers().size());
+			int i = 0;
+			for(Player target : Bukkit.getOnlinePlayers())
 			{
-				player.teleport(randomPlayer.getLocation());
-			}
-		}else player.sendMessage(StaffPlus.get().message.generalMessage("&bNot enough players online."));
-	}
-	
-	private Player getRandomPlayer(Player player, int dice)
-	{
-		Player targetPlayer = null;
-		int players = Bukkit.getOnlinePlayers().size();
-		
-		for(int i = 0; i < players; i++)
-		{
-			Player potentialPlayer = (Player) Bukkit.getOnlinePlayers().toArray()[i];
-			
-			if(players >= 3)
-			{
-				i++;
-			}else if(!player.getName().equals(potentialPlayer.getName()) && players < 3)
-			{
-				potentialPlayer = targetPlayer;
-				break;
-			}
-
-			if(i == dice)
-			{
-				if(!player.getName().equals(potentialPlayer.getName()))
+				if(players >= 3)
 				{
-					potentialPlayer = targetPlayer;
-					break;
+					i++;
+				}else if(!player.getName().equals(target.getName()) && players < 3)
+				{
+					player.teleport(target);
+				}
+
+				if(i == current)
+				{
+					if(!player.getName().equals(target.getName()))
+					{
+						player.teleport(target);
+					}
 				}
 			}
-		}
-		
-		return targetPlayer;
+		}else player.sendMessage(StaffPlus.get().message.generalMessage("&bNot enough players online."));
 	}
 }
