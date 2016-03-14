@@ -7,8 +7,7 @@ public class Message
 {
 	public String colorize(String msg)
 	{
-		String coloredMsg = ChatColor.translateAlternateColorCodes('&', msg);
-		return coloredMsg;
+		return ChatColor.translateAlternateColorCodes('&', msg);
 	}
 	
 	public String generalMessage(String msg)
