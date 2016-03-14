@@ -1,22 +1,15 @@
 package org.zencode.shortninja.staffplus.util.shortninja;
 
 import org.zencode.shortninja.staffplus.StaffPlus;
+import org.bukkit.ChatColor;
 
 public class Message
 {
 	public String colorize(String msg)
-    {
-        String coloredMsg = "";
-        for(int i = 0; i < msg.length(); i++)
-        {
-			if(msg.charAt(i) == '&')
-			{
-				coloredMsg += '§';
-			}else coloredMsg += msg.charAt(i);
-        }
-        
-        return coloredMsg;
-    }
+	{
+		String coloredMsg = ChatColor.translateAlternateColorCodes('&', msg);
+		return coloredMsg;
+	}
 	
 	public String generalMessage(String msg)
 	{
